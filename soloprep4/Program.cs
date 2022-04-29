@@ -30,4 +30,6 @@ foreach (int num in nums) {
 }
 Console.WriteLine($"The largest is {largest}");
 
+int x = int.Parse(Console.ReadLine());
+
 
