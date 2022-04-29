@@ -41,33 +41,51 @@ public class GameManager {
         int playersFinished = 0;
 
         string input;
+        int highscore = 0;
 
         while(!gameOver) {
 
             foreach(Person player in players) {
 
                 if (player.isPlaying) {
-                    Console.WriteLine($"{player.name}({player.score} points): Would you like to roll the dice? (y/n)");
-                    input = Console.ReadLine();
-                    if (input == "y") {
-                        int points = player.rollDice();
-                        if (points == 0) {
+
+                    if (numPlayers-1 == playersFinished && player.score == highscore) {
+                        gameOver = true;
+                        endGame();
+                    }
+
+                    else {
+
+                        Console.WriteLine($"{player.name} ({player.score} points): Would you like to roll the dice? (y/n)");
+                        input = Console.ReadLine();
+                        if (input == "y") {
+                            int points = player.rollDice();
+                            if (points == 0) {
+                                playersFinished++;
+                            }
+                            else if (player.score > highscore) {
+                                highscore = player.score;
+                            }
+                        }
+                        else {
+                            player.endGame();
                             playersFinished++;
                         }
-                    }
-                    else {
-                        player.endGame();
-                        playersFinished++;
+
+                        if (numPlayers-1 == playersFinished && player.score > highscore) {
+                            gameOver = true;
+                            endGame();
+                        }
+
                     }
                 }
             }
 
             if (playersFinished == numPlayers) {
                     gameOver = true;
+                    endGame();
             }
         }
-        
-        endGame();
     }
 
     public void endGame() {
