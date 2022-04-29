@@ -1,0 +1,15 @@
+C:\Users\user\cs230\dice\bin\Debug\net6.0\dice.exe
+C:\Users\user\cs230\dice\bin\Debug\net6.0\dice.deps.json
+C:\Users\user\cs230\dice\bin\Debug\net6.0\dice.runtimeconfig.json
+C:\Users\user\cs230\dice\bin\Debug\net6.0\dice.dll
+C:\Users\user\cs230\dice\bin\Debug\net6.0\dice.pdb
+C:\Users\user\cs230\dice\obj\Debug\net6.0\dice.csproj.AssemblyReference.cache
+C:\Users\user\cs230\dice\obj\Debug\net6.0\dice.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\cs230\dice\obj\Debug\net6.0\dice.AssemblyInfoInputs.cache
+C:\Users\user\cs230\dice\obj\Debug\net6.0\dice.AssemblyInfo.cs
+C:\Users\user\cs230\dice\obj\Debug\net6.0\dice.csproj.CoreCompileInputs.cache
+C:\Users\user\cs230\dice\obj\Debug\net6.0\dice.dll
+C:\Users\user\cs230\dice\obj\Debug\net6.0\refint\dice.dll
+C:\Users\user\cs230\dice\obj\Debug\net6.0\dice.pdb
+C:\Users\user\cs230\dice\obj\Debug\net6.0\dice.genruntimeconfig.cache
+C:\Users\user\cs230\dice\obj\Debug\net6.0\ref\dice.dll
