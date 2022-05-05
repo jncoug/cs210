@@ -69,7 +69,7 @@ public class GameManager {
 
                 if (player.isPlaying) {
 
-                    if (numPlayers-1 == playersFinished) {
+                    if ((numPlayers-1 == playersFinished && numPlayers != 1) || (numPlayers == playersFinished)) {
                         gameOver = true;
                         
                     }
@@ -80,6 +80,7 @@ public class GameManager {
                         player.guess(nextIsHigher);
                         
                         if (player.score <= 0) {
+                            gameOver = true;
                             player.score = 0;
                             player.endGame();
                             playersFinished++;
