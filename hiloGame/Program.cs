@@ -18,10 +18,19 @@ public class GameManager {
     }
 
     public int getPlayers() {
+        int numPlayers = 0;
 
-        Console.WriteLine("How many players would you like?");
+        Console.WriteLine("How many players would you like? (1-8)");
+        numPlayers = int.Parse(Console.ReadLine());
 
-        int numPlayers = int.Parse(Console.ReadLine());
+        while (!(numPlayers <= 8 && numPlayers >= 1)) {
+            Console.WriteLine("Oops, we need a number between 1 and 8");
+
+            numPlayers = int.Parse(Console.ReadLine());
+
+        }
+
+        
 
         for (int i = 1; i <= numPlayers; i++) {
             Console.WriteLine($"Enter name for Player {i}:");
@@ -34,8 +43,16 @@ public class GameManager {
 
     public int getEndScore() {
 
-        Console.WriteLine("What score would you like to play to?");
+        Console.WriteLine("What score would you like to play to? (400-3000)");
         int endScore = int.Parse(Console.ReadLine());
+
+
+        while (!(endScore <= 3000 && endScore >= 400)) {
+            Console.WriteLine("Oops, we need a finishing score between 400 and 3000");
+
+            endScore = int.Parse(Console.ReadLine());
+
+        }
 
         return endScore;
 
@@ -80,7 +97,6 @@ public class GameManager {
                         player.guess(nextIsHigher);
                         
                         if (player.score <= 0) {
-                            gameOver = true;
                             player.score = 0;
                             player.endGame();
                             playersFinished++;
@@ -116,6 +132,13 @@ public class GameManager {
                 tie = true;
                 winnerName += " and " + player.name;
             }
+
+            if (player.score == 0) {
+                Console.WriteLine($"{player.name}: You finished the game with 0 points.");
+            }
+            else {
+                Console.WriteLine($"{player.name}: You finished the game with {player.score} points.");
+            }
         }
 
         if (winnerScore == 0) {
@@ -149,6 +172,12 @@ public class Player {
         int points;
         string input = Console.ReadLine();
 
+        while (!(input == "h" || input == "l")) {
+            Console.WriteLine("Oops, enter h or l to make a guess.");
+            input = Console.ReadLine();
+
+        }
+
         if (input == "h") {
             if (nextIsHigher) {
                 points = 100;
@@ -170,12 +199,7 @@ public class Player {
     }
     
     public void endGame() {
-        if (score == 0) {
-            Console.WriteLine("You finished the game with 0 points.");
-        }
-        else {
-            Console.WriteLine($"You finished the game with {score} points.");
-        }
+        
         isPlaying = false;
     }
 

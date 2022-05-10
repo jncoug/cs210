@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\user\\cs210\\me\\me.csproj": {}
+    "C:\\Users\\user\\cs210\\hiloGame\\me.csproj": {}
   },
   "projects": {
-    "C:\\Users\\user\\cs210\\me\\me.csproj": {
+    "C:\\Users\\user\\cs210\\hiloGame\\me.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\user\\cs210\\me\\me.csproj",
+        "projectUniqueName": "C:\\Users\\user\\cs210\\hiloGame\\me.csproj",
         "projectName": "me",
-        "projectPath": "C:\\Users\\user\\cs210\\me\\me.csproj",
+        "projectPath": "C:\\Users\\user\\cs210\\hiloGame\\me.csproj",
         "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\user\\cs210\\me\\obj\\",
+        "outputPath": "C:\\Users\\user\\cs210\\hiloGame\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
