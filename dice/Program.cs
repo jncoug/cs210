@@ -12,6 +12,7 @@ public class GameManager {
 
     List<Person> players = new List<Person>();
     bool gameOver = false;
+    int numPlayers;
 
 
     public GameManager()
@@ -37,7 +38,7 @@ public class GameManager {
         Console.WriteLine("Welcome to the Dice Game!");
         Console.WriteLine("*************************");
         
-        int numPlayers = getPlayers();
+        numPlayers = getPlayers();
         int playersFinished = 0;
 
         string input;
@@ -99,6 +100,8 @@ public class GameManager {
                 winnerName = player.name;
             }
         }
+
+        if (num)
 
         Console.WriteLine($"The winner is {winnerName} with a score of {winnerScore}!");
     }

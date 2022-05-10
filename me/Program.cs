@@ -45,7 +45,7 @@ public class GameManager {
         Console.WriteLine("Welcome to the Hi-Low Game!");
         Console.WriteLine("*************************");
         
-        Card card = new Card();
+        Deck deck = new Deck();
 
         int endScore = getEndScore();
         int numPlayers = getPlayers();
@@ -56,14 +56,14 @@ public class GameManager {
 
         while(!gameOver) {
 
-            card.getNextCard();
-            if (card.nextCard > card.currentCard) {
+            deck.getNextCard();
+            if (deck.nextCard > deck.currentCard) {
                 nextIsHigher = true;
             }
             else {
                 nextIsHigher = false;
             }
-            Console.WriteLine($"The card is: {card.currentCard}");
+            Console.WriteLine($"The card is: {deck.currentCard}");
 
             foreach(Player player in players) {
 
@@ -88,7 +88,7 @@ public class GameManager {
 
                         else if (player.score >= endScore) {
                             gameOver = true;
-                            Console.WriteLine($"The card is: {card.nextCard}");
+                            
                             
                         }
                         
@@ -96,22 +96,38 @@ public class GameManager {
                 }
             }
         }
+        Console.WriteLine($"The card is: {deck.nextCard}");
         endGame();
     }
 
     public void endGame() {
         string winnerName = "";
         int winnerScore = 0;
+        bool tie = false;
 
         foreach(Player player in players) {
             
             if (player.score > winnerScore) {
                 winnerScore = player.score;
                 winnerName = player.name;
+                tie = false;
+            }
+            else if (player.score == winnerScore) {
+                tie = true;
+                winnerName += " and " + player.name;
             }
         }
 
-        Console.WriteLine($"The winner is {winnerName} with a score of {winnerScore}!");
+        if (winnerScore == 0) {
+            Console.WriteLine("Sorry! You lost. Better luck next time.");
+        }
+        else if (tie) {
+            Console.WriteLine($"The winners are {winnerName} with a tie score of {winnerScore}!");
+        }
+        else {
+            Console.WriteLine($"The winner is {winnerName} with a score of {winnerScore}!");
+        }
+
     }
 }
 
@@ -165,13 +181,13 @@ public class Player {
 
 }
 
-public class Card {
+public class Deck {
     public int currentCard;
     public int nextCard;
     Random random = new Random();
     
 
-    public Card()
+    public Deck()
     {
         nextCard = random.Next(1,13);
 
@@ -180,7 +196,7 @@ public class Card {
     public void getNextCard() {
         currentCard = nextCard;
         while (nextCard == currentCard) {
-            nextCard = random.Next(1,13);
+            nextCard = random.Next(1,14);
         }
 
     }
