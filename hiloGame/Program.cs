@@ -157,14 +157,13 @@ public class GameManager {
 
 public class Player {
 
-    public int score;
+    public int score = 300;
     public bool isPlaying = true;
     public string name;
 
     public Player(string playerName) 
     {
         name = playerName;
-        score = 300;
     }
 
     public void guess(bool nextIsHigher) {

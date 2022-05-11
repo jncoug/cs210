@@ -1,0 +1,15 @@
+C:\Users\user\cs210\scratch\bin\Debug\net6.0\scratch.exe
+C:\Users\user\cs210\scratch\bin\Debug\net6.0\scratch.deps.json
+C:\Users\user\cs210\scratch\bin\Debug\net6.0\scratch.runtimeconfig.json
+C:\Users\user\cs210\scratch\bin\Debug\net6.0\scratch.dll
+C:\Users\user\cs210\scratch\bin\Debug\net6.0\scratch.pdb
+C:\Users\user\cs210\scratch\obj\Debug\net6.0\scratch.csproj.AssemblyReference.cache
+C:\Users\user\cs210\scratch\obj\Debug\net6.0\scratch.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\cs210\scratch\obj\Debug\net6.0\scratch.AssemblyInfoInputs.cache
+C:\Users\user\cs210\scratch\obj\Debug\net6.0\scratch.AssemblyInfo.cs
+C:\Users\user\cs210\scratch\obj\Debug\net6.0\scratch.csproj.CoreCompileInputs.cache
+C:\Users\user\cs210\scratch\obj\Debug\net6.0\scratch.dll
+C:\Users\user\cs210\scratch\obj\Debug\net6.0\refint\scratch.dll
+C:\Users\user\cs210\scratch\obj\Debug\net6.0\scratch.pdb
+C:\Users\user\cs210\scratch\obj\Debug\net6.0\scratch.genruntimeconfig.cache
+C:\Users\user\cs210\scratch\obj\Debug\net6.0\ref\scratch.dll
