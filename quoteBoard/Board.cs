@@ -16,7 +16,7 @@ public class Board {
     }
 
     public void getRandomQuote() {
-        random = new Random();
+        Random random = new Random();
         int num = random.Next(0, quotes.Count);
         Console.WriteLine(quotes[num].getQuote());
     }

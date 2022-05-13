@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\cs210\\scratch\\scratch.csproj",
+      "projectUniqueName": "C:\\Users\\user\\cs210\\quoteBoard\\scratch.csproj",
       "projectName": "scratch",
-      "projectPath": "C:\\Users\\user\\cs210\\scratch\\scratch.csproj",
+      "projectPath": "C:\\Users\\user\\cs210\\quoteBoard\\scratch.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user\\cs210\\scratch\\obj\\",
+      "outputPath": "C:\\Users\\user\\cs210\\quoteBoard\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config"
