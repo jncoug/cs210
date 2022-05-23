@@ -1,0 +1,15 @@
+C:\Users\user\cs210\jumper\bin\Debug\net6.0\jumper.exe
+C:\Users\user\cs210\jumper\bin\Debug\net6.0\jumper.deps.json
+C:\Users\user\cs210\jumper\bin\Debug\net6.0\jumper.runtimeconfig.json
+C:\Users\user\cs210\jumper\bin\Debug\net6.0\jumper.dll
+C:\Users\user\cs210\jumper\bin\Debug\net6.0\jumper.pdb
+C:\Users\user\cs210\jumper\obj\Debug\net6.0\jumper.csproj.AssemblyReference.cache
+C:\Users\user\cs210\jumper\obj\Debug\net6.0\jumper.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\cs210\jumper\obj\Debug\net6.0\jumper.AssemblyInfoInputs.cache
+C:\Users\user\cs210\jumper\obj\Debug\net6.0\jumper.AssemblyInfo.cs
+C:\Users\user\cs210\jumper\obj\Debug\net6.0\jumper.csproj.CoreCompileInputs.cache
+C:\Users\user\cs210\jumper\obj\Debug\net6.0\jumper.dll
+C:\Users\user\cs210\jumper\obj\Debug\net6.0\refint\jumper.dll
+C:\Users\user\cs210\jumper\obj\Debug\net6.0\jumper.pdb
+C:\Users\user\cs210\jumper\obj\Debug\net6.0\jumper.genruntimeconfig.cache
+C:\Users\user\cs210\jumper\obj\Debug\net6.0\ref\jumper.dll
