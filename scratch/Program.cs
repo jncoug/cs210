@@ -1,4 +1,18 @@
-﻿public class Phone {
+﻿void main() {
+    Phone phone = new Phone("5095960161");
+    CameraPhone cphone = new CameraPhone("5052380304");
+
+    phone.placeCall("5052380304");
+
+    phone.placeText("5052380304", "Hi I love you");
+
+    cphone.takePicture();
+
+}
+
+main();
+
+public class Phone {
 
     private string phoneNumber;
     private List<string> textMessages = new List<string>();
@@ -42,6 +56,7 @@ public class CameraPhone : Phone {
     }
 
     public void takePicture() {
-        images.add("img");
+        images.Add("img");
+        Console.WriteLine("Img has been added from the camera");
     }
 }
