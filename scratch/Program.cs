@@ -1,41 +1,47 @@
-﻿VendingMachine vm = new VendingMachine();
-vm.populate();
-vm.getList();
+﻿public class Phone {
 
-public class Item {
-    private string name;
-    private float price;
+    private string phoneNumber;
+    private List<string> textMessages = new List<string>();
+    public Phone(string phoneNumber) {
 
-    public Item(string name, float price) {
-        this.name = name;
-        this.price = price;
+        this.phoneNumber = phoneNumber;
+
     }
 
-    public void showItem() {
-        Console.WriteLine($"{name} -  ${price}");
+    public void placeCall(string numberToCall) {
+        Console.WriteLine($"Dialing {numberToCall}...");
+    }
+
+    public void placeText(string numberToCall, string messageToSend) {
+        Console.WriteLine($"Texting {numberToCall} this message: '{messageToSend}'");
+    }
+
+    public void saveText(string messageToSave) {
+        Console.WriteLine("Saving message...");
+    }
+
+    public List<string> getTexts() {
+        foreach(string text in textMessages) {
+            Console.WriteLine(text);
+        }
+        return textMessages;
+    }
+
+    public string getNumber() {
+        Console.WriteLine(phoneNumber) ;
+        return phoneNumber;
         
     }
-
 }
 
-public class VendingMachine {
+public class CameraPhone : Phone {
+    List<string> images = new List<string>();
 
-    private List<Item> items = new List<Item>();
+    public CameraPhone(string phoneNumber) : base(phoneNumber){
 
-    public VendingMachine() {
-        Console.WriteLine("Hi, what is your order?");
-        
     }
 
-    public void getList() {
-        Console.WriteLine("Here are the options");
-        foreach(Item item in items) {
-            item.showItem();
-        }
-    }
-
-    public void populate() {
-        items.Add(new Item("Cosmic Brownies", 1.00f));
-        items.Add(new Item("Sprite", 1.50f));
+    public void takePicture() {
+        images.add("img");
     }
 }
