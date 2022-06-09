@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "sPSF0cC2BZPe7zeOBCNghXuu8AA91gO/2x8EmSRCF8XHi6lBtO7DUlk0h8LryVL+4dAgaP4dwbwMxtn08vfo4A==",
+  "dgSpecHash": "xdEwgsFL7RXcchzF/g+ckDrqD+bz9xNrNYtAR/hk5PTtxVV0IMVTgQGkYIl2MXVOtuAuAC8wS5fHY+TaJf8Wzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user\\cs210\\greed\\greed.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\user\\cs210\\greed\\Unit04.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\raylib-cs\\4.0.0.1\\raylib-cs.4.0.0.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

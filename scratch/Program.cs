@@ -8,6 +8,10 @@
 
     cphone.takePicture();
 
+    cphone.placeCall("5095960161");
+
+    cphone.placeText("5095960161", "I love you too");
+
 }
 
 main();
@@ -52,6 +56,7 @@ public class CameraPhone : Phone {
     List<string> images = new List<string>();
 
     public CameraPhone(string phoneNumber) : base(phoneNumber){
+
 
     }
 
