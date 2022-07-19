@@ -124,9 +124,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user\\cs210\\greed\\Unit04.csproj",
-      "projectName": "Unit04",
-      "projectPath": "C:\\Users\\user\\cs210\\greed\\Unit04.csproj",
+      "projectUniqueName": "C:\\Users\\user\\cs210\\greed\\greed.csproj",
+      "projectName": "greed",
+      "projectPath": "C:\\Users\\user\\cs210\\greed\\greed.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\user\\cs210\\greed\\obj\\",
       "projectStyle": "PackageReference",
