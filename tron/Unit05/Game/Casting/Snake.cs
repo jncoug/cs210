@@ -12,12 +12,24 @@ namespace Unit05.Game.Casting
     {
         private List<Actor> segments = new List<Actor>();
 
+        private String controls;
+
         /// <summary>
         /// Constructs a new instance of a Snake.
         /// </summary>
-        public Snake()
+        public Snake(int player)
         {
-            PrepareBody();
+            PrepareBody(player);
+        }
+
+        public String GetControls()
+        {
+            return controls;
+        }
+
+        public void SetControls(String controls)
+        {
+            this.controls = controls;
         }
 
         /// <summary>
@@ -98,10 +110,18 @@ namespace Unit05.Game.Casting
         /// <summary>
         /// Prepares the snake body for moving.
         /// </summary>
-        private void PrepareBody()
+        private void PrepareBody(int player)
         {
             int x = Constants.MAX_X / 2;
-            int y = Constants.MAX_Y / 2;
+            int y;
+
+            if (player == 1) {
+                y = Constants.MAX_Y / 8;
+            }
+            else {
+                y = Constants.MAX_Y / 4;
+            }
+            
 
             for (int i = 0; i < Constants.SNAKE_LENGTH; i++)
             {

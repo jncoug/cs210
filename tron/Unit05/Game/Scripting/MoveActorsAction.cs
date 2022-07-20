@@ -36,13 +36,17 @@ namespace Unit05.Game.Scripting
 
         public void Execute(Cast cast, Script script) {
 
-            Snake snake = (Snake)cast.GetFirstActor("snake");
+            Snake player1 = (Snake)cast.GetFirstActor("player1");
+            Snake player2 = (Snake)cast.GetFirstActor("player2");
             Actor score = cast.GetFirstActor("score");
-            Actor food = cast.GetFirstActor("food");
+            
 
-            snake.MoveNext();
+            player1.MoveNext();
+            player1.GrowTail(1);
+            player2.MoveNext();
+            player2.GrowTail(1);
             score.MoveNext();
-            food.MoveNext();
+            
 
         }
 
