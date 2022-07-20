@@ -1,0 +1,15 @@
+C:\Users\user\cs210\finalGame\bin\Debug\net6.0\finalGame.exe
+C:\Users\user\cs210\finalGame\bin\Debug\net6.0\finalGame.deps.json
+C:\Users\user\cs210\finalGame\bin\Debug\net6.0\finalGame.runtimeconfig.json
+C:\Users\user\cs210\finalGame\bin\Debug\net6.0\finalGame.dll
+C:\Users\user\cs210\finalGame\bin\Debug\net6.0\finalGame.pdb
+C:\Users\user\cs210\finalGame\obj\Debug\net6.0\finalGame.csproj.AssemblyReference.cache
+C:\Users\user\cs210\finalGame\obj\Debug\net6.0\finalGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\user\cs210\finalGame\obj\Debug\net6.0\finalGame.AssemblyInfoInputs.cache
+C:\Users\user\cs210\finalGame\obj\Debug\net6.0\finalGame.AssemblyInfo.cs
+C:\Users\user\cs210\finalGame\obj\Debug\net6.0\finalGame.csproj.CoreCompileInputs.cache
+C:\Users\user\cs210\finalGame\obj\Debug\net6.0\finalGame.dll
+C:\Users\user\cs210\finalGame\obj\Debug\net6.0\refint\finalGame.dll
+C:\Users\user\cs210\finalGame\obj\Debug\net6.0\finalGame.pdb
+C:\Users\user\cs210\finalGame\obj\Debug\net6.0\finalGame.genruntimeconfig.cache
+C:\Users\user\cs210\finalGame\obj\Debug\net6.0\ref\finalGame.dll
