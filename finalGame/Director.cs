@@ -20,6 +20,7 @@ public class Director {
         Console.WriteLine("Welcome to the Monster Game! Don't let him win!");
         Console.WriteLine("***********************************************");
         team.getPlayers();
+        Console.WriteLine("An enemy approches!");
         Wait();
         monster.Show();
         team.ShowStats();
@@ -52,11 +53,12 @@ public class Director {
         }
         else {
             monster.NextLevel();
+            Wait();
         }
     }
 
     public void DoOutputs() {
-        if (monster.GetLevel() == 4) {
+        if (monster.GetLevel() == 4 || !team.IsPlaying()) {
             gameOver = true;
         }
         else {
@@ -68,13 +70,22 @@ public class Director {
     public void Wait() {
         for (int i = 0; i < 3; i++) {
             Console.WriteLine(".");
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
         }
     }
 
     
 
     public void EndGame() {
+
+        if (team.IsPlaying()) {
+            Console.WriteLine("You've defeated all the enemys! Enjoy the treasure and may your days be long!");
+        }
+        else {
+            Console.WriteLine("You were all defeated, better luck next time.");
+        }
+        Wait();
+        Console.WriteLine("THE END");
         
     }
 }

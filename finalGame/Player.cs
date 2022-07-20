@@ -4,11 +4,13 @@ public class Player {
 
     int health;
     int MAX_HEALTH;
-    Boolean alive = true;
+    bool alive = true;
 
     int attack;
 
     int critChance;
+
+    int sheildChance;
 
     bool drinkingCritPotion = false;
 
@@ -28,78 +30,125 @@ public class Player {
             this.health+=healthChange;
         }
 
-        attack = (20/numPlayers) + random.Next(1,10);
+        attack = (20/numPlayers) + random.Next(3,10);
         critChance = random.Next(2,6);
         string critString = "poor";
 
         switch (critChance) {
             case 2:
-                critString = "low";
+                critString = "high";
                 break;
             case 3:
                 critString = "good";
                 break;
             case 4:
-                critString = "high";
+                critString = "ok";
                 break;
             case 5:
-                critString = "very high";
+                critString = "low";
                 break;
         }
 
-        Console.WriteLine($"{name}, you have {this.health} hp, your attack is {attack} and your critical rate is {critString}");
+        sheildChance = random.Next(2,6);
+        string sheildString = "poor";
 
-        Thread.Sleep(2000);
+        switch (sheildChance) {
+            case 2:
+                sheildString = "high";
+                break;
+            case 3:
+                sheildString = "good";
+                break;
+            case 4:
+                sheildString = "ok";
+                break;
+            case 5:
+                sheildString = "low";
+                break;
+        }
+
+        Console.WriteLine($"{name}, you have {this.health} hp, your attack is {attack}, your critical hit rate is {critString}, and your defense level is {sheildString}.");
+
+        Wait();
     }
     
 
     public int Attack() {
-        
+
+        Random r = new Random();
+        int missChance = r.Next(1,7);
         if (drinkingCritPotion) {
             Console.WriteLine("Potion ATTACK!");
             drinkingCritPotion = false;
+            if (missChance == 1) {
+                
+                return 0;
+            }
+            
             return attack*3;
         }
 
-        Random r = new Random();
-        int critLuck = r.Next(30, 110) / critChance;
+        
+        int critLuck = r.Next(10, 110) / critChance;
 
         if (critLuck >= 20) {
-            Console.WriteLine("Critical Hit!");
+            if (missChance == 1) {
+                
+                return 0;
+            }
+            else {
+                Console.WriteLine("Critical Hit!");
+            }
             return (attack*2);
         }
         else{
+            if (missChance == 1) {
+                
+                return 0;
+            }
             return attack;
         }
    
     }
 
 
-    public void TakeDamage(int damageDealt) {
+    public bool TakeDamage(int damageDealt) {
+        Random r = new Random();
+        int sheild = r.Next(1,8);
+        if (sheild>sheildChance) {
+            damageDealt = (damageDealt/2);
+            Console.WriteLine($"{name} blocked some damage with their shield!");
+        }
+        
         health-= damageDealt;
+        
         Console.WriteLine($"{name} took {damageDealt} damage!");
         if (health <= 0) {
             
-            Console.WriteLine($"No! {name} had been destroyed in battle. May their his/her death be avenged!");
+            Console.WriteLine($"No! {name} has fallen in battle. May their death be avenged!");
             alive = false;
+            health = 0;
+            
         }
         else {
-            Console.WriteLine($"They are still in this battle. They have {health} HP");
+            Console.WriteLine($"They have {health} HP");
         }
+        return alive;
     } 
 
     public void Wait() {
         for (int i = 0; i < 3; i++) {
             Console.WriteLine(".");
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
         }
     }
 
     public void Heal() {
-        health+=10;
+        health+=15;
         if (health > MAX_HEALTH) {
             health = MAX_HEALTH;
         }
+        Console.WriteLine($"{name} healed up! You now have {health} HP");
     }
 
     public void DisplayInfo() {
@@ -124,6 +173,8 @@ public class Player {
 
     public void DrinkPotion() {
         drinkingCritPotion = true;
+        Console.WriteLine($"{name} is ready to deal some serious damage!");
+        Wait();
     }
 
     public bool IsDrinkingPotion() {

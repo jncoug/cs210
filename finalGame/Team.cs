@@ -1,14 +1,15 @@
 public class Team
 {
     int teamDamage;
-    int TEAM_HEALTH = 200;
 
-    int healPotions = 2;
+    bool isPlaying = true;
+    int TEAM_HEALTH = 150;
 
-    int criticalPotions = 1;
+    int healPotions = 4;
 
-    
+    int criticalPotions = 3;
 
+    int playersLeft;
     bool drinkingCritPotion = false;
 
     private List<Player> players = new List<Player>();
@@ -22,6 +23,8 @@ public class Team
 
         int numPlayers = int.Parse(Console.ReadLine());
 
+        playersLeft=numPlayers;
+
         int playerHealth = TEAM_HEALTH/numPlayers;
 
         for (int i = 1; i <= numPlayers; i++) {
@@ -34,7 +37,7 @@ public class Team
     }
 
     public void Heal() {
-        Console.WriteLine("Which player would you like to heal (+10 health)?");
+        Console.WriteLine("Which player would you like to heal (+15 health)?");
         int i = 1;
         foreach(Player player in players) {
             if (player.IsAlive()) {
@@ -102,7 +105,13 @@ public class Team
                 Wait();
                 int playerDamage = player.Attack();
                 damageToDo+=playerDamage;
-                Console.WriteLine($"The enemy was dealt {playerDamage} damage by {player.GetName()}!");
+                if (playerDamage == 0) {
+                    Console.WriteLine("Oh no! you missed!");
+                }
+                else {
+                    Console.WriteLine($"The enemy was dealt {playerDamage} damage by {player.GetName()}.");
+                }
+                
             }
             
 
@@ -120,7 +129,7 @@ public class Team
     public void Wait() {
         for (int i = 0; i < 3; i++) {
             Console.WriteLine(".");
-            Thread.Sleep(500);
+            Thread.Sleep(1000);
         }
     }
 
@@ -132,15 +141,43 @@ public class Team
         Console.WriteLine("The monster is now attacking");
         Wait();
         Random r = new Random();
-        if (players.Count>=2) {
-            players[r.Next(0,players.Count)].TakeDamage(damageDealt);
+
+        List<Player> playersToHit = new List<Player>();
+
+        foreach(Player player in players) {
+                if (player.IsAlive()) {
+                    playersToHit.Add(player);
+                }
+            }
+
+        if (playersLeft>2) {
+            
+            bool alive = playersToHit[r.Next(0,playersToHit.Count)].TakeDamage(damageDealt);
+            if (!alive) {
+                playersLeft--;
+            }
             Wait();
-            players[r.Next(0,players.Count)].TakeDamage(damageDealt);
+            alive = playersToHit[r.Next(0,playersToHit.Count)].TakeDamage(damageDealt);
+            if (!alive) {
+                playersLeft--;
+            }
             Wait();
         }
         else {
-            players[r.Next(0,players.Count)].TakeDamage(damageDealt);
+            bool alive = playersToHit[r.Next(0,playersToHit.Count)].TakeDamage(damageDealt);
+            if (!alive) {
+                playersLeft--;
+            }
+            Wait();
         }
+
+        if (playersLeft == 0) {
+            isPlaying = false;
+        }
+    }
+
+    public bool IsPlaying() {
+        return isPlaying;
     }
 
 
